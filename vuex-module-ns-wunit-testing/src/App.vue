@@ -4,6 +4,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/phone-display-state">Module Phone Display State</router-link> |
       <router-link to="/phone-mutate-state">Mod-Ph Update State</router-link> |
+      <router-link to="/customer-display-state">Mod-Customer Display State</router-link> |
 
       <br />
     </div>

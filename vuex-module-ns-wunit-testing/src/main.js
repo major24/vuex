@@ -7,22 +7,22 @@ import Vuex from 'vuex'
 // https://github.com/lmiller1990/vuex-testing-example
 // https://codeburst.io/vuex-store-d888de10d499
 
-// NOTE: 
+// NOTE:
 // Uncomment to test/run simple store **
 // Uncomment on router to see the links..
 // import store from '../src/store/simple-store'
 
 // NOTE: to run module based store
-import createStore from '../src/store/phoneModule'
+import createStore from '../src/store'
 
 const setupApp = async () => {
 
   Vue.config.productionTip = false;
   Vue.use(Vuex);
-  
-  const store = await createStore();
 
-  console.log(store);
+  const store = await createStore()
+
+  console.log(store)
 
   new Vue({
     router,
@@ -31,5 +31,4 @@ const setupApp = async () => {
   }).$mount('#app')
 };
 
-setupApp();
-
+setupApp()
