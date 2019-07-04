@@ -6,6 +6,7 @@
       <router-link to="/mutate-simple-state">Mutate Simple State</router-link> |
       <router-link to="/action-simple-state">Action Simple State</router-link> |
       <router-link to="/getter-simple-state">Getter Simple State</router-link> |
+      <router-link to="/action-call-getter">Action Call Getter</router-link> |
       <br />
     </div>
     <router-view/>
