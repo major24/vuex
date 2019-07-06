@@ -3,13 +3,20 @@
     <h3>Action Simple State</h3>
 
     <button @click="getData" id="btn1">Do an action - getData</button>
-    <button @click="setStateByParamValue(val)" id="btn2">Do an action - getDataById</button>
+    <button @click="setStateByParamValue(val)" id="btn2">setStateByParamValue - mapActions</button>
+    <button @click="callActionWithMultiValues({ph: '416', phtype: 'mobile', 'getterValue': getter_value_1})" id="btn3">
+      callActionWithMultiValues-mapActions
+    </button>
+
+    <button @click="callActionMapToDiffMethodName({ph: '905', phtype: 'home', 'getterValue': getter_value_1})" id="btn4">
+      callActionMapToDiffMethodName-mapActions
+    </button>
 
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'ActionSimpleState',
@@ -22,6 +29,12 @@ export default {
   created() {
       // console.log('action simple state created');
   },
+  computed: {
+    ...mapGetters({
+      getter_value_1: 'getter_value_1',
+      loc_getter_2: 'getter_value_2'
+    })
+  },
 
   methods: {
       getData () {
@@ -29,8 +42,12 @@ export default {
           this.$store.dispatch('getData');
       },
       ...mapActions([
-        'setStateByParamValue'
+        'setStateByParamValue',
+        'callActionWithMultiValues'
         ]),
+      ...mapActions({
+        callActionMapToDiffMethodName: 'callActionWithMultiValues'
+      })
   },
 
   watch: {

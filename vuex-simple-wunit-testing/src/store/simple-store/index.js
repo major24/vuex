@@ -30,10 +30,15 @@ export default new Vuex.Store({
     setStateByParamValue(context, payload) {
       console.log('in store action setStateByParamValue')
       console.log(context); // state
-      console.log(payload); // 2424
+      console.log(payload); // 22
       console.log(context.state.value_2);
       context.commit('setValue2', payload)
       console.log(context.state.value_2);
+    },
+    callActionWithMultiValues(context, payload) {
+      console.log('in store action callActionWithMultiValues')
+      console.log(context); // state
+      console.log(payload); 
     },
     testAction(context) {
       console.log('in testAction: ', context);
